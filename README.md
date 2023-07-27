@@ -6,6 +6,9 @@ see https://tecadmin.net/install-nvm-macos-with-homebrew/
 run: nvm install node 
 use: (version: v20.5.0)
 
+firebaseproject
+# https://console.firebase.google.com/project/windwebbb/overview
+
 
 
 
