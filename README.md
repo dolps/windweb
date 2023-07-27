@@ -1,3 +1,14 @@
+# environement setup
+# https://brew.sh/ install brew
+run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# install nvm (node version manager)
+see https://tecadmin.net/install-nvm-macos-with-homebrew/
+run: nvm install node 
+use: (version: v20.5.0)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
