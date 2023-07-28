@@ -1,8 +1,6 @@
 const { useState, useEffect } = require("react")
 
 const SpotList = () => {
-    const [coinName, setCoinName] = useState(null);
-
     const useSpotFetcher = () => {
         const [spots, setSpotList] = useState(null);
         const [fetched, setFetched] = useState(false);
@@ -35,7 +33,7 @@ const SpotList = () => {
                 })
 
             console.log('spots')
-        }, [coinName])
+        }, [])
         return [spots, loading, fetched];
     }
 
