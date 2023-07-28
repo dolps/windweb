@@ -1,19 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import SpotList from './component/SpotList';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Spots
-        </p>
-        <SpotList/>
-      </header>
+    <ChakraProvider>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Spots
+          </p>
+          <SpotList />
+        </header>
 
-    </div>
+      </div>
+    </ChakraProvider>
+
   );
 }
 

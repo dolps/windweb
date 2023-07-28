@@ -1,4 +1,12 @@
+import { CircularProgress } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import {
+    Text,
+    ListItem,
+    UnorderedList,
+} from '@chakra-ui/react'
 const { useState, useEffect } = require("react")
+
 
 const SpotList = () => {
     const useSpotFetcher = () => {
@@ -39,19 +47,25 @@ const SpotList = () => {
 
     const [spots, loading, fetched] = useSpotFetcher();
     const mapSpotData = () => {
-        if (!fetched) return <div>No data fetched</div>;
+        if (!fetched) return <CircularProgress isIndeterminate color='green.300' />;
         if (loading) return <div>Loading...</div>;
         if (!spots) {
             return <div>No Spot Data</div>;
         } else {
             return (
                 <div>
-                    <h1>Spots</h1>
-                    <div>{JSON.stringify(spots)}</div>
-
-                    <ul>
-                        {spots.map(d => (<li key={d.spotName}>{d.spotName}</li>))}
-                    </ul>
+                    <Tabs variant='soft-rounded' colorScheme='green'>
+                        <TabList>
+                            {spots.map(d => (<Tab>{d.spotName}</Tab>))}
+                        </TabList>
+                        <TabPanels>
+                            {spots.map(d => (<TabPanel>
+                                <UnorderedList styleType="none">{d.windInfos.toReversed().map((wind, key) =>
+                                    (<ListItem key={key}><Text textAlign={['left']}>{wind.time} {wind.speed} {wind.direction}</Text></ListItem>))}
+                                </UnorderedList>
+                            </TabPanel>))}
+                        </TabPanels>
+                    </Tabs>
 
                 </div>
             );
