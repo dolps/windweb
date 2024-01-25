@@ -15,7 +15,6 @@ const SpotList = () => {
         const [loading, setLoading] = useState(false);
 
         useEffect(() => {
-            console.log('hello')
             const windApiUrl = "https://vindapi.herokuapp.com/api/spots";
             setLoading(true);
 

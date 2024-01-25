@@ -8,9 +8,9 @@ function App() {
     <ChakraProvider>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo" width={250} height={250}  />
           <p>
-            Spots
+            Windweb
           </p>
           <SpotList />
         </header>
