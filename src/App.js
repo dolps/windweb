@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import bcImg from './mill.HEIC'
 import './App.css';
 import SpotList from './component/SpotList';
 import { ChakraProvider } from '@chakra-ui/react'
@@ -8,10 +9,9 @@ function App() {
     <ChakraProvider>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" width={250} height={250}  />
-          <p>
-            Windwebb
-          </p>
+          <img src={bcImg} className="App-logo" alt="logo"  >
+            
+          </img>
           <SpotList />
         </header>
 
